@@ -3,6 +3,8 @@ on:
   push:
     branches:
     - main
+  schedule:
+    - '43 * * * *'
 
 jobs:
   atualiza_o_readme:
@@ -26,7 +28,13 @@ jobs:
     
     - name: setup dos pacotes de R
       run: |
-        Rscipt -e '2+2'
+        Rscript -e 'install.packages("webshot2", repos = c(CRAN = "https://packagemanager.posit.co/cran/__linux__/noble/latest"))'
+        Rscript -e 'install.packages("rmarkdown", repos = c(CRAN = "https://packagemanager.posit.co/cran/__linux__/noble/latest"))'
+        Rscript -e 'install.packages("tidyverse", repos = c(CRAN = "https://packagemanager.posit.co/cran/__linux__/noble/latest"))'
+        Rscript -e 'install.packages("sparklyr", repos = c(CRAN = "https://packagemanager.posit.co/cran/__linux__/noble/latest"))'
+        Rscript -e 'install.packages("pysparklyr", repos = c(CRAN = "https://packagemanager.posit.co/cran/__linux__/noble/latest"))'
+        Rscript -e 'install.packages("knitr", repos = c(CRAN = "https://packagemanager.posit.co/cran/__linux__/noble/latest"))'
+        Rscript -e 'install.packages("plotly", repos = c(CRAN = "https://packagemanager.posit.co/cran/__linux__/noble/latest"))'
         Rscript -e 'install.packages("rmarkdown", repos = c(CRAN = "https://packagemanager.posit.co/cran/__linux__/noble/latest"))'
   
     - name: Render README and Commit Results
@@ -34,7 +42,7 @@ jobs:
         quarto render README.qmd
         git config --local user.name "$GITHUB_ACTOR"
         git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
-        git commit . -m 'Re-build Rmarkdown files' || echo "No changes to commit"
+        git commit README.qmd -m 'Re-build Rmarkdown files' || echo "No changes to commit"
         git push origin || echo "No changes to commit"
 
     # - name: atualiza o README.md
