@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
-    - name: Faz o clone do repositorio (e seus arquivos) na maquina do GHA
+    - name: Faz o clone do repositorio na maquina do GHA
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -22,7 +22,7 @@ jobs:
       with:
         tinytex: true 
   
-    - name: Render README.qmd and Commit Results
+    - name: Render README and Commit Results
         run: |
           quarto render README.qmd
           git config --local user.name "$GITHUB_ACTOR"
