@@ -1,0 +1,23 @@
+on:
+  workflow_dispatch:
+  push:
+    branches:
+    - main
+
+jobs:
+  atualiza_o_readme:
+    name: Atualiza o README.md
+    runs-on: ubuntu-22.04
+    steps:
+    - name: Set up Quarto
+      uses: quarto-dev/quarto-actions/setup@v2
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tinytex: true 
+  
+    # - name: atualiza o README.md
+    # - run: ...
+  
+    # - name: sobe o README.md atualizado no repositorio
+    # - run: ...
