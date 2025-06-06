@@ -21,6 +21,13 @@ jobs:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         tinytex: true 
+    
+    # - name: carrega pacotes do renv
+    
+    - name: setup dos pacotes de R
+      run: |
+        Rscipt -e '2+2'
+        Rscript -e 'install.packages("rmarkdown", repos = c(CRAN = "https://packagemanager.posit.co/cran/__linux__/noble/latest"))'
   
     - name: Render README and Commit Results
       run: |
