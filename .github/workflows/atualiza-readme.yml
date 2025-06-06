@@ -23,12 +23,12 @@ jobs:
         tinytex: true 
   
     - name: Render README and Commit Results
-        run: |
-          quarto render README.qmd
-          git config --local user.name "$GITHUB_ACTOR"
-          git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
-          git commit . -m 'Re-build Rmarkdown files' || echo "No changes to commit"
-          git push origin || echo "No changes to commit"
+      run: |
+        quarto render README.qmd
+        git config --local user.name "$GITHUB_ACTOR"
+        git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
+        git commit . -m 'Re-build Rmarkdown files' || echo "No changes to commit"
+        git push origin || echo "No changes to commit"
 
     # - name: atualiza o README.md
     # - run: ...
