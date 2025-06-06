@@ -22,7 +22,7 @@ jobs:
 
     - name: Setup R
       uses: r-lib/actions/setup-r@v2
-      
+
     - name: Set up Quarto
       uses: quarto-dev/quarto-actions/setup@v2
       env:
@@ -32,7 +32,7 @@ jobs:
     
     # - name: carrega pacotes do renv
     
-    - name: setup dos pacotes de R
+    - name: Render README and Commit Results
       run: |
         Rscript -e 'install.packages("webshot2", repos = c(CRAN = "https://packagemanager.posit.co/cran/__linux__/noble/latest"))'
         Rscript -e 'install.packages("rmarkdown", repos = c(CRAN = "https://packagemanager.posit.co/cran/__linux__/noble/latest"))'
@@ -42,9 +42,6 @@ jobs:
         Rscript -e 'install.packages("knitr", repos = c(CRAN = "https://packagemanager.posit.co/cran/__linux__/noble/latest"))'
         Rscript -e 'install.packages("plotly", repos = c(CRAN = "https://packagemanager.posit.co/cran/__linux__/noble/latest"))'
         Rscript -e 'install.packages("rmarkdown", repos = c(CRAN = "https://packagemanager.posit.co/cran/__linux__/noble/latest"))'
-  
-    - name: Render README and Commit Results
-      run: |
         quarto render README.qmd
         git config --local user.name "$GITHUB_ACTOR"
         git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
