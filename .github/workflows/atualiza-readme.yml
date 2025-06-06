@@ -10,6 +10,8 @@ jobs:
   atualiza_o_readme:
     name: Atualiza o README.md
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
     - name: Faz o clone do repositorio na maquina do GHA
