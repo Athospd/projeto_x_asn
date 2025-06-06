@@ -1,18 +1,22 @@
 # Relatorio Diario de Compliance
 Athos Damiani
-2025-06-05
+2025-06-06
 
 Projeto de analise de dados para a area de compliance da Empresa X
 
-Data e hora de atualizacao: 2025-06-05 20:55:24.866725
+Data e hora de atualizacao: 2025-06-06 10:30:17.682809
 
 ``` r
 lubridate::now()
 ```
 
-    [1] "2025-06-05 20:55:24 -03"
+    [1] "2025-06-06 10:30:17 UTC"
 
 (Analise dos dados aqui)
+
+``` r
+# sc <- spark_connect(method = "databricks_connect")
+```
 
 Problemas de uma pessoa ter que atualizar todo dia:
 
@@ -24,3 +28,7 @@ Problemas de uma pessoa ter que atualizar todo dia:
 Solucao proposta: automatizar a rodagem quando - Ou o documento for
 alterado (sofrer alguma mudanca/melhoria) - Ou agendado para rodar todo
 dia ou todo mes (ou periodicamente)
+
+Github Actions
+
+Agora este documento tem um secao a mais
