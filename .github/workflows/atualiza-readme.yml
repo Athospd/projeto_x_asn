@@ -4,7 +4,7 @@ on:
     branches:
     - main
   schedule:
-    - '43 * * * *'
+    - cron: '*/5 * * * *'
 
 jobs:
   atualiza_o_readme:
