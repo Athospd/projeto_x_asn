@@ -1,16 +1,16 @@
 # Relatorio Diario de Compliance
 Athos Damiani
-2025-06-13
+2025-06-14
 
 Projeto de analise de dados para a area de compliance da Empresa X
 
-Data e hora de atualizacao: 2025-06-13 23:58:03.23068
+Data e hora de atualizacao: 2025-06-14 01:40:18.816306
 
 ``` r
 lubridate::now()
 ```
 
-    [1] "2025-06-13 23:58:03 UTC"
+    [1] "2025-06-14 01:40:18 UTC"
 
 (Analise dos dados aqui)
 
