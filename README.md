@@ -4,13 +4,13 @@ Athos Damiani
 
 Projeto de analise de dados para a area de compliance da Empresa X
 
-Data e hora de atualizacao: 2025-07-22 02:52:16.267017
+Data e hora de atualizacao: 2025-07-22 03:55:54.248019
 
 ``` r
 lubridate::now()
 ```
 
-    [1] "2025-07-22 02:52:16 UTC"
+    [1] "2025-07-22 03:55:54 UTC"
 
 (Analise dos dados aqui)
 
